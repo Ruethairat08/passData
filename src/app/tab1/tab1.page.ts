@@ -6,10 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
-year='2562'
-term='1'
-class='อนุบาล1'
-room='ห้อง1'
+  Level={
+year:'ปีการศึกษา2562/1',
+class:'อนุบาล1',
+room:'ห้อง1', }
+
   data=[{
     image:'https://png.pngtree.com/element_origin_min_pic/16/10/04/1257f32f7db95ed.jpg',
     name:'ด.ช. เอ  เมืองใหญ่',
@@ -45,7 +46,7 @@ room='ห้อง1'
     name:'ด.ช. โจ้  เมืองจัน',
     id:'2578417845739'
   }
-]
+];
 
   
 }

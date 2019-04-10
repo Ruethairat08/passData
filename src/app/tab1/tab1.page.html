@@ -8,65 +8,39 @@
 
 <ion-content>
     <ion-row>
-      <ion-searchbar (ionInput)></ion-searchbar>
+      <!-- Searchbar with value -->
+<ion-searchbar placeholder="ชื่อ-สกุล"></ion-searchbar>
     </ion-row>
 
-    <ion-list>
       <ion-item>
         <ion-label>
-          ปีการศึกษา/ภาคเรียน
+          <ion-row>
+            <ion-col>
+         {{Level.year}}
+        </ion-col>
+        <ion-col>
+            {{Level.class}} {{Level.room}}
+        </ion-col>
+        </ion-row>
         </ion-label>
       </ion-item>
-
-      <ion-item *> 
+      <ion-list>
+      <ion-item *ngFor="let item of data"> 
 <ion-row>
   <ion-col size="4">
-<ion-avatar item-start></ion-avatar>
-<img width="30" [src]="item.">
+<ion-avatar item-start>
+<img width="30" [src]="item.image">
+</ion-avatar>
   </ion-col>
 
-  <ion-col size="4">
+  <ion-col size="8">
     <p>
-      {{item.ชื่อ}} {{item.นามสกุล}}
+      {{item.name}}  {{item.id}}
     </p>
   </ion-col>
 
-  <ion-col size="4">
-<p>
-  {{item.เลขบัตรประชาชน}}
-</p>
-  </ion-col>
 </ion-row>
       </ion-item>
 
     </ion-list>
-</ion-item>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </ion-content>

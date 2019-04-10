@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab1',
@@ -7,9 +8,10 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
   Level={
-year:'ปีการศึกษา2562/1',
+year:'2562',
+term:'2',
 class:'อนุบาล1',
-room:'ห้อง1', }
+room:'1', }
 
   data=[{
     image:'https://png.pngtree.com/element_origin_min_pic/16/10/04/1257f32f7db95ed.jpg',
@@ -48,5 +50,11 @@ room:'ห้อง1', }
   }
 ];
 
+constructor (public route:NavController){
+}
   
+listdata(item){
+  this.route.navigateForward(['/profile',{profile:JSON.stringify(item)}]);
+  console.log(item)
+}
 }

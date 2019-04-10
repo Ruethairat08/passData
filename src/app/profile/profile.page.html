@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-row>
+      <ion-col size=1><ion-icon name="close-circle-outline" size="large" (click)="backtab1()"></ion-icon></ion-col>
+      <ion-col size=9><ion-title ><h3   class="head">โปรไฟล์</h3></ion-title></ion-col>
+      <ion-col size=1><ion-icon name="star-outline" size="large"></ion-icon></ion-col>
+      <ion-col size=1><ion-icon name="md-more" size="large"></ion-icon></ion-col>
+  </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+
+
+
+<ion-content>
+  <img class="pic" [src]="data.image">
+  <h1 text-center>{{data.name}}</h1>
+  <br>
+  <h5 text-center>เลขบัตรประจำตัวประชาชน</h5>
+  <h3 text-center><b>{{data.id}}</b></h3>
+</ion-content>
+
+
+
+
+<ion-footer>
+  <ion-toolbar text-center>
+    <ion-row>
+      <ion-col size=6>
+        <ion-row>
+          <ion-col size=12>
+            <ion-icon name="images" size="large"></ion-icon>
+          </ion-col>
+          <ion-col size=12>
+            ผลการเรียน
+          </ion-col>
+        </ion-row>
+      </ion-col>
+
+      <ion-col size=6>
+        <ion-row>
+          <ion-col size=12>
+            <ion-icon name="leaf" size="large"></ion-icon>
+          </ion-col>
+          <ion-col size=12>
+            น้ำหนักส่วนสูง
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

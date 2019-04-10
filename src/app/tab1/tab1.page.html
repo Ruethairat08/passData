@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-    รายชื่อนักเรียน
+    <h3>รายชื่อนักเรียน</h3>
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -15,28 +15,28 @@
       <ion-item>
         <ion-label>
           <ion-row>
-            <ion-col>
-         {{Level.year}}
+            <ion-col text-left>
+         ปีการศึกษา {{Level.year}}/{{Level.term}}
         </ion-col>
-        <ion-col>
-            {{Level.class}} {{Level.room}}
+        <ion-col text-right>
+            ชั้น{{Level.class}}/{{Level.room}}
         </ion-col>
         </ion-row>
         </ion-label>
       </ion-item>
       <ion-list>
-      <ion-item *ngFor="let item of data"> 
+      <ion-item *ngFor="let item of data" (click)="listdata(item)"> 
 <ion-row>
   <ion-col size="4">
-<ion-avatar item-start>
-<img width="30" [src]="item.image">
+<ion-avatar>
+<img class="a" [src]="item.image">
 </ion-avatar>
   </ion-col>
 
   <ion-col size="8">
-    <p>
-      {{item.name}}  {{item.id}}
-    </p>
+    <p>{{item.name}}
+      {{item.id}}</p>
+ 
   </ion-col>
 
 </ion-row>

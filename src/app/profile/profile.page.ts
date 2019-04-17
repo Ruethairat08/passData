@@ -21,4 +21,7 @@ data:any;
   backtab1() {
     this.route.navigateForward('/tabs/tab1')
 }
+gofortfolio() {
+  this.route.navigateForward('/portfolio')
+}
 }

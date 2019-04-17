@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-portfolio',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PortfolioPage implements OnInit {
 
-  constructor() { }
+
+  constructor(
+    public modalcontroller:ModalController
+  ) { }
 
   ngOnInit() {
   }

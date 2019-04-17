@@ -1,3 +1,4 @@
+import { StudentService } from './../services/student/student.service';
 import { Component } from '@angular/core';
 import { NavController } from '@ionic/angular';
 
@@ -7,54 +8,24 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
-  Level={
-year:'2562',
-term:'2',
-class:'อนุบาล1',
-room:'1', }
-
-  data=[{
-    image:'https://png.pngtree.com/element_origin_min_pic/16/10/04/1257f32f7db95ed.jpg',
-    name:'ด.ช. เอ  เมืองใหญ่',
-    id:'2578417845351'
-  },
-  {
-    image:'http://www.khanpak.com/files/content/thumbnails/370_250/2015/content-0034463-1448510682.jpg',
-    name:'ด.ช. บี  เมืองเล็ก',
-    id:'2578417845987'
-  },
-  {
-    image:'https://www.maerakluke.com/wp-content/uploads/2013/12/45688989.jpg',
-    name:'ด.ญ. เบล  เมืองกลาง',
-    id:'2578417845098'
-  },
-  {
-    image:'https://www.maerakluke.com/wp-content/uploads/2014/05/35222.jpg',
-    name:'ด.ญ. ส้มโอ  เมืองชัย',
-    id:'2578417845231'
-  },
-  {
-    image:'http://www.khanpak.com/files/content/thumbnails/370_250/2015/content-0033541-1444879630.jpg',
-    name:'ด.ญ. ส้มแป้น  ใจดี',
-    id:'2578417845752'
-  },
-  {
-    image:'https://cache.gmo2.sistacafe.com/images/uploads/summary/image/46360/boy_cover.jpg',
-    name:'ด.ช. ลพ  ดีใจ',
-    id:'2578417845197'
-  },
-  {
-    image:'https://i.pinimg.com/236x/57/7d/60/577d60709c6b008f3b4b776f6968bd23.jpg',
-    name:'ด.ช. โจ้  เมืองจัน',
-    id:'2578417845739'
+data:any;
+  constructor(
+    public studentservice:StudentService,
+    public route: NavController
+  ) {
   }
-];
 
-constructor (public route:NavController){
-}
-  
-listdata(item){
-  this.route.navigateForward(['/profile',{profile:JSON.stringify(item)}]);
-  console.log(item)
-}
+  listdata(item) {
+    this.route.navigateForward(['/profile', { profile: JSON.stringify(item) }]);
+    console.log(item)
+  }
+
+  ngOnInit() {
+    this.getData();
+  }
+  async getData(){
+    this.data= await this.studentservice.getdatastudent()
+    console.log(this.data);
+  }
+
 }
